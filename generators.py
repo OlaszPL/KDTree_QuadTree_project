@@ -167,5 +167,5 @@ def generate_clustered_points(cluster_centers, cluster_std, points_per_cluster):
     points = []
     for center in cluster_centers:
         cluster_points = np.random.normal(center, cluster_std, size=(points_per_cluster, 2))
-        points += cluster_points
+        points.extend(cluster_points)
     return [tuple(point) for point in points]

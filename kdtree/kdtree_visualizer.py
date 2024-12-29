@@ -33,8 +33,7 @@ class KDtreeVisualizer:
         poly = self.vis_build.add_polygon([lower_bound, (upper_bound[0], lower_bound[1]), upper_bound, (lower_bound[0], upper_bound[1])], color = 'grey', alpha = 0.4)
 
         axis = depth % self.k
-        median_idx = (n - 1) // 2
-        median_point = P[axis][median_idx]
+        median_point = P[axis][(n - 1) // 2]
         median = median_point[axis]
 
         if axis == 0:
@@ -53,15 +52,11 @@ class KDtreeVisualizer:
         prep_P_left, prep_P_right = [[] for _ in range(self.k)], [[] for _ in range(self.k)]
 
         for i in range(self.k):
-            if i == axis:
-                prep_P_left[i] = P[i][:median_idx + 1]
-                prep_P_right[i] = P[i][median_idx + 1:]
-            else:
-                for p in P[i]:
-                    if p[axis] - median <= self.eps:
-                        prep_P_left[i].append(p)
-                    else:
-                        prep_P_right[i].append(p)
+            for p in P[i]:
+                if p[axis] - median <= self.eps:
+                    prep_P_left[i].append(p)
+                else:
+                    prep_P_right[i].append(p)
 
         self.vis_build.remove_figure(poly)
 

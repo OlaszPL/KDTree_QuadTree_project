@@ -52,21 +52,16 @@ class KDtree:
         if n == 1: return Node(point = P[0][0])
 
         axis = depth % self.k
-        median_idx = (n - 1) // 2
-        median = P[axis][median_idx][axis]
+        median = P[axis][(n - 1) // 2][axis]
 
         prep_P_left, prep_P_right = [[] for _ in range(self.k)], [[] for _ in range(self.k)]
 
         for i in range(self.k):
-            if i == axis:
-                prep_P_left[i] = P[i][:median_idx + 1]
-                prep_P_right[i] = P[i][median_idx + 1:]
-            else:
-                for p in P[i]:
-                    if p[axis] - median <= self.eps:
-                        prep_P_left[i].append(p)
-                    else:
-                        prep_P_right[i].append(p)
+            for p in P[i]:
+                if p[axis] - median <= self.eps:
+                    prep_P_left[i].append(p)
+                else:
+                    prep_P_right[i].append(p)
 
         return Node(
             line = median,

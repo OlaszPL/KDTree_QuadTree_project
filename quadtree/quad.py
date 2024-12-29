@@ -172,7 +172,9 @@ class Quad:
     def __str__(self): return self.leaves
     #poniższe funkcje wywołują swoje rekurencyjne odpowiedniki
     def insert(self, point): return self.root.insert_subtree(point)
-    def query_range(self, range_rect): return self.root.query_range_subtree(range_rect)
+    def query_range(self, min_point, max_point):
+        range_rect = Rectangle(min_point[0], min_point[1], max_point[0], max_point[1])
+        return self.root.query_range_subtree(range_rect)
     def graphic_query_range(self, range_rect, visualizer, color):
         range_rect.draw(visualizer, 'brown')
         return self.root.graphic_query_range_subtree(range_rect, visualizer, color)

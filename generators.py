@@ -9,7 +9,8 @@ def generate_uniform_points(left, right, n = 10 ** 5):
     :param n: ilość generowanych punktów
     :return: tablica punktów w postaci krotek współrzędnych np. [(x1, y1), (x2, y2), ... (xn, yn)]
     """ 
-    return np.random.uniform(left, right, size = (n, 2))
+    points =  np.random.uniform(left, right, size = (n, 2))
+    return [tuple(point) for point in points]
 
 def generate_normal_points(mean, std, n = 10 ** 5):
     """
@@ -19,7 +20,8 @@ def generate_normal_points(mean, std, n = 10 ** 5):
     :param n: ilość generowanych punktów
     :return: tablica punktów w postaci krotek współrzędnych np. [(x1, y1), (x2, y2), ... (xn, yn)]
     """ 
-    return np.random.normal(mean, std, size=(n, 2))
+    points = np.random.normal(mean, std, size=(n, 2))
+    return [tuple(point) for point in points]
 
 def generate_collinear_points(a, b, n = 100, x_range = 1000):
     """
@@ -41,7 +43,7 @@ def generate_collinear_points(a, b, n = 100, x_range = 1000):
         y = a[1] + vect[1] * t
         points.append((x, y))
 
-    return points
+    return [tuple(point) for point in points]
 
 def generate_rectangle_points(a=(-10, -10), b=(10, -10), c=(10, 10), d=(-10, 10), n=100):
     '''
@@ -86,7 +88,7 @@ def generate_rectangle_points(a=(-10, -10), b=(10, -10), c=(10, 10), d=(-10, 10)
         y = point[1] + vect[1] * t
         points.append((x, y))
 
-    return points
+    return [tuple(point) for point in points]
 
 def generate_square_points(a=(0, 0), b=(10, 0), c=(10, 10), d=(0, 10),
                            axis_n=25, diag_n=20):
@@ -144,7 +146,7 @@ def generate_square_points(a=(0, 0), b=(10, 0), c=(10, 10), d=(0, 10),
             y = point[1] + vect[1] * t
             points.append((x, y))
 
-    return points
+    return [tuple(point) for point in points]
 
 def generate_grid_points(n = 100):
     """
@@ -152,7 +154,7 @@ def generate_grid_points(n = 100):
     :param n: ilość punktów wzdłuż jednej osi
     :return: tablica punktów w postaci krotek współrzędnych
     """
-    return [((i, j) for i in range (n)) for j in range(n)]
+    return [(i, j) for i in range(n) for j in range(n)]
 
 def generate_clustered_points(cluster_centers, cluster_std, points_per_cluster):
     """
@@ -166,4 +168,4 @@ def generate_clustered_points(cluster_centers, cluster_std, points_per_cluster):
     for center in cluster_centers:
         cluster_points = np.random.normal(center, cluster_std, size=(points_per_cluster, 2))
         points += cluster_points
-    return points
+    return [tuple(point) for point in points]

@@ -175,7 +175,8 @@ class Quad:
     def query_range(self, min_point, max_point):
         range_rect = Rectangle(min_point[0], min_point[1], max_point[0], max_point[1])
         return self.root.query_range_subtree(range_rect)
-    def graphic_query_range(self, range_rect, visualizer, color):
+    def graphic_query_range(self, min_point, max_point, visualizer, color):
+        range_rect = Rectangle(min_point[0], min_point[1], max_point[0], max_point[1])
         range_rect.draw(visualizer, 'brown')
         return self.root.graphic_query_range_subtree(range_rect, visualizer, color)
     def draw(self, visualizer, color):

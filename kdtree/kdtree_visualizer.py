@@ -81,7 +81,7 @@ class KDtreeVisualizer:
 
         preprocessed_P = [sorted(P, key = lambda x:x[i]) for i in range(self.k)]
 
-        self.start_lower_bound = (-preprocessed_P[0][0][0], -preprocessed_P[1][0][1])
+        self.start_lower_bound = (preprocessed_P[0][0][0], preprocessed_P[1][0][1])
         self.start_upper_bound = (preprocessed_P[0][-1][0], preprocessed_P[1][-1][1])
         
         self.root = self.__build_kdtree(preprocessed_P, 0, self.start_lower_bound, self.start_upper_bound)

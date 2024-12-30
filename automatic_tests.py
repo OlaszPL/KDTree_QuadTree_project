@@ -8,7 +8,7 @@ left, right = -1000, 1000
 
 tests = []
 
-def runtests():
+def runtests_all():
     for i in ns:
         tests.append(generators.generate_uniform_points(left, right, i))
         tests.append(generators.generate_normal_points(45, 1, i))
@@ -34,4 +34,4 @@ def runtests():
     print('Testy zaliczone!')
 
 if __name__ == '__main__':
-    runtests()
+    runtests_all()

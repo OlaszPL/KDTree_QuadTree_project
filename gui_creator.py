@@ -4,6 +4,14 @@ import tkinter as tk
 from tkinter import simpledialog
 
 def create_gui():
+    """Creates a GUI for collecting points and defining a rectangular region on a 2D plane.
+
+    Returns:
+        tuple: A tuple containing:
+            - points (list of tuples): List of (x, y) coordinates of the points.
+            - lower_left (tuple): (x, y) coordinates of the lower-left corner of the rectangle.
+            - upper_right (tuple): (x, y) coordinates of the upper-right corner of the rectangle.
+    """
     root = tk.Tk()
     root.withdraw()
 
@@ -64,7 +72,11 @@ def create_gui():
         ax.set_title("Zdefiniuj dwa punkty (lower_left, upper_right), a następnie naciśnij \"save\"", pad=20)
         fig.canvas.draw()
 
+
+    done = False
+
     def on_save(_):
+        nonlocal done
         if len(points) < 1:
             ax.set_title("Musisz najpierw dodać co najmniej jeden punkt, aby użyć 'next'.", pad=20)
             fig.canvas.draw()
@@ -74,7 +86,8 @@ def create_gui():
             fig.canvas.draw()
             return
         plt.close()
-
+        root.after(100, root.quit)
+            
     fig, ax = plt.subplots()
 
     fig.canvas.manager.set_window_title("Kreator punktów")
@@ -95,7 +108,8 @@ def create_gui():
     btn_next.on_clicked(on_next)
     btn_save.on_clicked(on_save)
 
-    plt.show()
+    plt.show(block = False)
+    root.mainloop()
 
     if len(rect_points) == 2:
         lower_left, upper_right = rect_points

@@ -179,7 +179,7 @@ class KDtreeVisualizer:
         Parameters:
             interval (int): The time interval in milliseconds between frames in the visualization. Default is 400 ms.
         """
-        self.vis_build.show_gif(interval = interval)
+        return self.vis_build.show_gif(interval = interval)
 
     def show_query_visualization(self, interval = 600):
         """Displays a visualization of the query process.
@@ -187,7 +187,7 @@ class KDtreeVisualizer:
         Parameters:
             interval (int): The time interval between frames in the visualization, in milliseconds. Default is 600 ms.
         """
-        self.vis_query.show_gif(interval = interval)
+        return self.vis_query.show_gif(interval = interval)
 
 
 if __name__ == '__main__':

@@ -11,9 +11,9 @@ tests = []
 def runtests_all():
     for i in ns:
         tests.append(generators.generate_uniform_points(left, right, i))
-        tests.append(generators.generate_normal_points(45, 1, i))
+        tests.append(generators.generate_normal_points(45, 7, i))
         tests.append(generators.generate_grid_points(int(i**0.5)))
-        tests.append(generators.generate_clustered_points(generators.generate_uniform_points(left, right, 4), 10, i // 4))
+        tests.append(generators.generate_clustered_points(generators.generate_uniform_points(left, right, 4), 100, i // 4))
         tests.append(generators.generate_collinear_points((left, left), (right, right), i))
         tests.append(generators.generate_rectangle_points())
         tests.append(generators.generate_square_points(axis_n = i // 2, diag_n = i // 2))

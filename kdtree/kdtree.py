@@ -126,7 +126,7 @@ class KDtree:
         return True
     
     
-    def __search_kdtree(self, v : Node, lower_bound, upper_bound, lower_left, upper_right, depth):
+    def __search_kdtree(self, v : Node, lower_bound : list, upper_bound : list, lower_left, upper_right, depth):
         """Recursively searches the KD-tree for points within a specified range.
 
         Parameters:
@@ -172,7 +172,7 @@ class KDtree:
     
 
     def query(self, lower_left, upper_right):
-        """Query the KD-tree to find all points within the specified rectangular region.
+        """Query the KD-tree to find all points within the specified region.
 
         Parameters:
             lower_left (list or tuple): The lower-left corner of the query region. 

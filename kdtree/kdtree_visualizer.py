@@ -98,7 +98,7 @@ class KDtreeVisualizer:
         return True
     
     
-    def __search_kdtree(self, v : Node, lower_bound, upper_bound, lower_left, upper_right, depth):
+    def __search_kdtree(self, v : Node, lower_bound : list, upper_bound : list, lower_left, upper_right, depth):
         if v.left is None and v.right is None:
             if all(lower_left[i] - self.eps <= v.point[i] <= upper_right[i] + self.eps for i in range(self.k)):
                 greenpoly = self.vis_query.add_polygon([lower_bound, (upper_bound[0], lower_bound[1]), upper_bound, (lower_bound[0], upper_bound[1])], color = 'green', alpha = 0.5)

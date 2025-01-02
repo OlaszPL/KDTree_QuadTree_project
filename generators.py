@@ -6,7 +6,7 @@ def generate_uniform_points(left, right, n = 10 ** 5):
     Funkcja generuje równomiernie n punktów na kwadwratowym obszarze od left do right (jednakowo na osi y) o współrzędnych rzeczywistych
     :param left: lewy kraniec przedziału
     :param right: prawy kraniec przedziału
-    :param n: ilość generowanych punktów
+    :param n: liczba generowanych punktów
     :return: tablica punktów w postaci krotek współrzędnych np. [(x1, y1), (x2, y2), ... (xn, yn)]
     """ 
     points =  np.random.uniform(left, right, size = (n, 2))
@@ -17,7 +17,7 @@ def generate_normal_points(mean, std, n = 10 ** 5):
     Funkcja generuje n punktów o rozkładzie normalnym na płaszczyźnie o współrzędnych rzeczywistych
     :param mean: średnia wartość rozkładu
     :param std: odchylenie standardowe rozkładu
-    :param n: ilość generowanych punktów
+    :param n: liczba generowanych punktów
     :return: tablica punktów w postaci krotek współrzędnych np. [(x1, y1), (x2, y2), ... (xn, yn)]
     """ 
     points = np.random.normal(mean, std, size=(n, 2))
@@ -28,7 +28,7 @@ def generate_collinear_points(a, b, n = 100, x_range = 1000):
     Funkcja generuje równomiernie n współliniowych punktów leżących na prostej ab pomiędzy punktami a i b
     :param a: krotka współrzędnych oznaczająca początek wektora tworzącego prostą
     :param b: krotka współrzędnych oznaczająca koniec wektora tworzącego prostą
-    :param n: ilość generowanych punktów
+    :param n: liczba generowanych punktów
     :return: tablica punktów w postaci krotek współrzędnych
     """
     points = []
@@ -53,7 +53,7 @@ def generate_rectangle_points(a=(-10, -10), b=(10, -10), c=(10, 10), d=(-10, 10)
     :param b: prawy-dolny wierzchołek prostokąta
     :param c: prawy-górny wierzchołek prostokąta
     :param d: lewy-górny wierzchołek prostokąta
-    :param n: ilość generowanych punktów
+    :param n: liczba generowanych punktów
     :return: tablica punktów w postaci krotek współrzędnych
     korzystam z generowania punktów na prostej (będę losowo wybierał prostą, na której wygenerowany zostanie punkt)
     '''
@@ -95,15 +95,15 @@ def generate_square_points(a=(0, 0), b=(10, 0), c=(10, 10), d=(0, 10),
     '''
     Funkcja generuje axis_n punktów na dwóch bokach kwadratu
     leżących na osiach x i y oraz diag_n punktów na
-    przektąnych kwadratu, którego wyznaczają punkty
+    przekątnych kwadratu, którego wyznaczają punkty
     a, b, c i d.
     :param a: lewy-dolny wierzchołek kwadratu
     :param b: prawy-dolny wierzchołek kwadratu
     :param c: prawy-górny wierzchołek kwadratu
     :param d: lewy-górny wierzchołek kwadratu
-    :param axis_n: ilość generowanych punktów na każdym
+    :param axis_n: liczba generowanych punktów na każdym
                    z dwóch boków kwadratu równoległych do osi x i y
-    :param diag_n: ilość generowanych punktów na każdej
+    :param diag_n: liczba generowanych punktów na każdej
                    przekątnej kwadratu
     :return: tablica punktów w postaci krotek współrzędnych
     '''
@@ -151,7 +151,7 @@ def generate_square_points(a=(0, 0), b=(10, 0), c=(10, 10), d=(0, 10),
 def generate_grid_points(n = 100):
     """
     Funkcja generuje punkty na siatce n x n
-    :param n: ilość punktów wzdłuż jednej osi
+    :param n: liczba punktów wzdłuż jednej osi
     :return: tablica punktów w postaci krotek współrzędnych
     """
     return [(i, j) for i in range(n) for j in range(n)]
@@ -161,7 +161,7 @@ def generate_clustered_points(cluster_centers, cluster_std, points_per_cluster):
     Funkcja generuje punkty w klastrach wokół podanych centrów klastrów
     :param cluster_centers: lista krotek współrzędnych centrów klastrów
     :param cluster_std: odchylenie standardowe dla każdego klastra
-    :param points_per_cluster: ilość punktów w każdym klastrze
+    :param points_per_cluster: liczba punktów w każdym klastrze
     :return: tablica punktów w postaci krotek współrzędnych
     """
     points = []

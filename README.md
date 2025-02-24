@@ -7,6 +7,7 @@
 - [Modules](#modules)
 - [Testing](#testing)
 - [Visualization](#visualization)
+- [Documentation](#documentation)
 - [License](#license)
 
 ## Introduction
@@ -77,6 +78,12 @@ The project includes tools for visualizing the construction and querying of KD-t
 - **Query Visualization**: Shows the process of querying the QuadTree.
   
 ![output](https://github.com/user-attachments/assets/9df73db4-e4fd-403c-978e-1677e322c376)
+
+## Documentation
+The project includes detailed documentation in the form of PDF files (in Polish). You can find the documentation in the `documentation` folder:
+
+- [presentation](documentation/prezentacja.pdf): A presentation about the project.
+- [documentation](documentation/dokumentacja.pdf): Detailed documentation of the project.
 
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.

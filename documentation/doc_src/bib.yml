@@ -1,0 +1,31 @@
+wyklad:
+    type: conference
+    title: Algorytmy geometryczne — wykład
+    author: dr inż. Barbara Głut
+
+ksiazka:
+    type: Book
+    title: Computational Geometry
+    subtitle: Algorithms and Applications
+    authors:
+     - Mark Berg
+     - Otfried Cheong
+     - Marc Kreveld
+     - Mark Overmars
+    doi: 10.1007/978-3-540-77974-2
+    publisher: Springer Berlin, Heidelberg
+    copyright: Springer-Verlag GmbH Germany, part of Springer Nature 2008
+    isbn:
+     hardcover: 978-3-540-77973-5
+     softcover: 978-3-642-09681-5
+     ebook: 978-3-540-77974-2
+    edition: 3
+    pages: 386
+    illustrations: 370 b/w
+    topics:
+     - Theory of Computation
+     - Geometry
+     - Math Applications in Computer Science
+     - Earth Sciences, general
+     - Computer Graphics
+     - Algorithm Analysis and Problem Complexity

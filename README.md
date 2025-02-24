@@ -12,6 +12,8 @@
 ## Introduction
 This project provides an implementation of KD-tree and QuadTree data structures in Python. It includes tools for building, querying, and visualizing these trees. The project is designed to help understand the functionality and efficiency of KD-tree and QuadTree for various datasets.
 
+![image](https://github.com/user-attachments/assets/3e6c779f-4060-4d99-8f4c-f803cf524277)
+
 ## Installation
 To install the necessary dependencies, run:
 
@@ -60,11 +62,21 @@ The project includes tools for visualizing the construction and querying of KD-t
 
 ### KD-tree Visualization
 - **Build Visualization**: Shows the process of building the KD-tree.
+  
+![output](https://github.com/user-attachments/assets/6c60ac6b-f950-44b6-a3e3-045b5e2f7417)
+
 - **Query Visualization**: Shows the process of querying the KD-tree.
+  
+![output](https://github.com/user-attachments/assets/9c5b13bb-63f0-4e48-9ada-f6e0c36f0c8c)
 
 ### QuadTree Visualization
 - **Build Visualization**: Shows the process of building the QuadTree.
+  
+![output](https://github.com/user-attachments/assets/3c3418f9-aae8-40e9-a8db-ef51819de88a)
+
 - **Query Visualization**: Shows the process of querying the QuadTree.
+  
+![output](https://github.com/user-attachments/assets/9df73db4-e4fd-403c-978e-1677e322c376)
 
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
